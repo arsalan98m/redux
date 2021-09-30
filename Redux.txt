@@ -1,0 +1,87 @@
+/*** An Introduction to Redux ****/
+It's state managing library used in JavaScript apps. It simply manages the state of 
+your application or in other words, it's used to manage the data of the application.
+It's used with a libraries like React, Angular, Vue or even Vanilla JS.
+
+/*** useReducer vs Redux ****/
+
+In these day react comes with useReducer Hook that is kind of basically the same thing it is similar but it is has also lakes  like you might have a single speed bike thats probably useful for getting around town but its may be not a like mountain bike or a  racing bike so one of the things that redux has and the bultin version of react does not have  is things like middlewares built-in, things like the binding for higherorder components that will take care of memoization and try to avoid re-rendering component when possible there are lot of just slightlty more advance things that come in redux are not in the useReducer hook it come in react
+
+/*** Where is ContextAPI? ****/
+The ContextAPI is actually used by both of them to kind of thread access to your store through out the application so redux is neccessary different in the ContextAPI in so far that it uses the ContextAPI the react-redux library that we see in the later bit uses the ContextAPI to give all of your different components access to your redux store from anywhere within the application so both useReducer and redux will use the ContextAPI to make your store available  
+
+
+
+/*** Why Redux? ****/
+The way Redux works is simple.There is a central store that holds the entire state of
+the application. Each component can access the stored state without having to send down
+props from one component to another.
+
+/*** The Three principles of Redux ****/
+1. Single Source of truth
+It helps to create universal apps. The state of the application is stored in one object
+tree called store. It means one app, one store.
+
+2. State is read-only
+It means that we don't change the state object and its properties directly.
+
+3. Changes are made with pure functions
+Reducers are pure functions that take previous state and action and return the new state
+
+
+
+
+
+/*** Three Core Concepts ****/
+1. A "store" that holds the state of your application.
+2. An "action" that describes the changes in the state of the application.
+3. A "reducer" which actually carries out the state transition depending on the action.
+
+"Reducer =>" Specify how the app's state changes in response to actions send to the store
+A pure function that accepts 2 arguments, state and action , and returns the next state of the application
+
+"combine reducers" -> combine multiple reducers in one reducer
+
+"Middleware =>" Is the suggested way to extend redux with custom functionality if we want redux with extra features middleware is the way to go
+Provide third-party extension point between dispatching an action, and the moment it reaches the reducer
+Use middleware for logging, crash reporting, performing asynchronous tasks etc.
+
+
+"Async Actions=>" Asynchronous API calls to fetch data from an end point and use that data in your application.
+
+/*** Redux has repectively five methods or function attached to it and four off them are helper utitlity functions ***/
+
+1.Applymiddleware
+
+2.compose -> compose allows you to take a set of functions and create one function that will pass by through each of them.
+
+3.combine reducers ->  combine multiple reducers in one reducer
+
+4.bindActionCreators  -> yeh function humsy do cheezy leta hai aik helper function jismain hamara action define hoa hai jaisy increment or dosry parameter main dispatch
+or yeh hamain ek value return karega jo hum call karengy tu reducer call hojayega 1st parameter object or 2nd main dispatch
+
+5.createStore -> The Redux store brings together the state, actions, and reducers that make up your app. The store has several responsibilities:
+
+createStore take reducer,initialState,enhancer -> what enhancer is ?
+If you want to add additional functionality in redux store this is a place we can pass it a function in the instance of createStore we use enhancer
+
+
+
+*) createStore has four more methods 
+1.dispatch (ismy hum type or payload bhaijty hain k kaunsa action perform karna hai or kaunsi value change karni hai)
+
+2.subscribe (jab bhi store ki value change hogi tu subscriber chalta or yeh callback function leta hai)
+
+3.getState (state ki value bata ta hai)
+
+4.replaceReducer (take a reducer function and replace it with new reducer)
+
+  
+// reduxToolkit wrapper on redux advance apis
+
+1 => createSlice => main api function to define redux logic
+2 => PayloadAction => typescript type that represent this is the contense of one given action object 
+3 => configurestore automatically apply few differnet middlewares for us in development there are 3 middlewares 1 it checks if you are accidentally mutating some
+state another is make sure we can export and import the entire serialize version of json and last is redux thunk which makes ajax calls
+ it gives everything underthe hood
+4=> redux thunk allows to dispatch functions that will eventually dispatch actions
