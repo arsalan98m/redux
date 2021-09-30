@@ -51,7 +51,11 @@ Use middleware for logging, crash reporting, performing asynchronous tasks etc.
 
 /*** Redux has repectively five methods or function attached to it and four off them are helper utitlity functions ***/
 
-1.Applymiddleware
+1.Applymiddleware ---> 
+"Middleware =>" Is the suggested way to extend redux with custom functionality if we want redux with extra features middleware is the way to go
+*) Provide third-party extension point between dispatching an action, and the moment it reaches the reducer
+*) Use middleware for logging, crash reporting, performing asynchronous tasks etc.
+*) logger log the logs on the state changes every time
 
 2.compose -> compose allows you to take a set of functions and create one function that will pass by through each of them.
 
