@@ -1,0 +1,13 @@
+/ *** Connect API *** /
+
+Connect Basically predate hooks in react 16 earlier we don't have hooks then on this time we are using connect api to get and dispatch from store in react
+There are trade offs between the two
+Hooks are definately very simple api and thats very easy to use
+There are some drawbacks to hooks as well that which is you know one of the concern and some of the cricticim of hooks in sometimes is like sepeartion of concerns like that component is hook into a redux store so like if you wanted to unit testing  or drop it into the storybook is little bit difficult without bringing all of your redux store alogn with it 
+
+With the ConnectAPI its just a different set of trade of 
+The ConnectAPI lets regular presentational component and wrap it in the  higher order component that passes in whatever state and whatever action creators or that the component need 
+
+/ *** Immer *** /
+
+// immer -> immer is also a built in redux toolkit helping you to treats immutable objects like the mutable and figure it out the different forms
