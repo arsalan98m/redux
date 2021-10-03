@@ -1,14 +1,7 @@
-/ *** Redux Toolkit *** /
+/ *** Thunk Middleware *** /
 
-1. Sits on top of redux 
-2. Taking a lot of the bolierplate
-3. we can create all of our actions,reducers,actionCreators kind of a one place which is slice  even also it will setup the devtools and middleware just all of that  for us
+How to make AJAX request?
+There are bunch of libraries to do that like of most thing it all depends on how extremely needs are if we have very simple need redux-thunk is probably the way to go because it is incredibly simple if we are doing really sophisticated things we might want to like redux-saga or anyother tools.
+redux-thunk is preety easy
 
-
-Redux recomment us to use these dependencies and they also Included in redux toolkit:-
-1. immer
-2. redux
-3. redux-devtools-extension
-4. redux-immutable-state-invariant
-5. redux-thunk
-6. rselect
+basically redux-thunk allows us to do dispatch functions that will eventually dispatch actions so we tell the redux-thunk  lets dispatch this function that will get the data from the api and it will go and dispatch the action once get the data return back; 
